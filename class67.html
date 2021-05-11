@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="color-hover">
+    <div class="color red"></div>
+    <div class="color cyan"></div>
+    <div class="color violet"></div>
+    <div class="color orange"></div>
+    <div class="color pink"></div>
+  </div>
+  <div class="center"></div>
+</body>
+<script>
+  const red = document.querySelector('.red');
+  const cyan = document.querySelector('.cyan');
+  const violet = document.querySelector('.violet');
+  const orange = document.querySelector('.orange');
+  const pink = document.querySelector('.pink');
+  const center = document.querySelector('.center');
+  const getBGColor = (selectElement) => {
+    return window.getComputedStyle(selectElement).backgroundColor;
+  }
+  const colorChanger = (element, color) => {
+    return element.addEventListener("mouseenter", () => {
+      center.style.background = color;
+    });
+  }
+  colorChanger(red, getBGColor(red))
+  colorChanger(cyan, getBGColor(cyan))
+  colorChanger(orange, getBGColor(orange))
+  colorChanger(violet, getBGColor(violet))
+  colorChanger(pink, getBGColor(pink))
+</script>
+</html>
